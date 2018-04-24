@@ -128,10 +128,10 @@ myArray = {
 //     'b': 2,
 // };
 
-class Animal {
+class Animal2 {
     name: string;
 }
-class Dog extends Animal {
+class Dog extends Animal2 {
     breed: string;
 }
 
