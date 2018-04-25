@@ -152,3 +152,20 @@ interface ReadonlyStringArray {
 }
 let myArr: ReadonlyStringArray = ["Alice", "Bob"];
 // myArr[2] = "Mallory"; // 오류!
+
+
+//-----------------------------
+
+/**
+ * 클래스 타입
+ */
+interface ClockInterface {
+    currentTime: Date;
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    constructor(h: number, m: number) {
+    }
+}
+
