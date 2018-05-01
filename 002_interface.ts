@@ -159,13 +159,49 @@ let myArr: ReadonlyStringArray = ["Alice", "Bob"];
 /**
  * 클래스 타입
  */
-interface ClockInterface {
+interface ClockInterfaceExample {
     currentTime: Date;
+    setTime(d: Date);
 }
 
-class Clock implements ClockInterface {
+class Clock implements ClockInterfaceExample {
     currentTime: Date;
+    setTime(d: Date) {
+    }
     constructor(h: number, m: number) {
     }
 }
 
+
+
+interface ClockConstructor {
+    new (hour: number, minute: number): ClockInterface;
+}
+interface ClockInterface {
+    tick();
+}
+
+//생성자는 정적인 측면에서 직접 작업해야 합니다.
+function createClock(
+    ctor: ClockConstructor,
+    hour: number,
+    minute: number
+): ClockInterface {
+    return new ctor(hour, minute);
+}
+
+class DigitalClock implements ClockInterface {
+    constructor(h: number, m: number) {}
+    tick() {
+        console.log("beep beep");
+    }
+}
+class AnalogClock implements ClockInterface {
+    constructor(h: number, m: number) {}
+    tick() {
+        console.log("tick tock");
+    }
+}
+
+let digital = createClock(DigitalClock, 12, 17);
+let analog = createClock(AnalogClock, 7, 32);
