@@ -205,3 +205,62 @@ class AnalogClock implements ClockInterface {
 
 let digital = createClock(DigitalClock, 12, 17);
 let analog = createClock(AnalogClock, 7, 32);
+
+// 인터페이스의 확장
+interface Shape {
+    color: string;
+}
+
+interface PenStroke {
+    penWidth: number;
+}
+
+interface Square extends Shape, PenStroke {
+    sideLength: number;
+}
+
+let square = <Square>{};
+square.color = "blue";
+square.sideLength = 10;
+square.penWidth = 5.0;
+
+// 하이브리드 타입
+interface Counter {
+    (start: number): string;
+    interval: number;
+    reset(): void;
+}
+
+function getCounter(): Counter {
+    let counter = <Counter>function(start: number) {};
+    counter.interval = 123;
+    counter.reset = function() {};
+    return counter;
+}
+
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5.0;
+
+// 인터페이스 확장 클래스
+class Control {
+    private state: any;
+}
+
+interface SelectableControl extends Control {
+    select(): void;
+}
+
+class Button extends Control implements SelectableControl {
+    select() {}
+}
+
+class TextBox extends Control {
+    select() {}
+}
+
+// 오류: 'Image' 타입의 'state' 프로퍼티가 없습니다.
+// class Image2 implements SelectableControl {
+//     select() {}
+// }
