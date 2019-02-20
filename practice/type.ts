@@ -58,9 +58,9 @@ notSure = false;
  * Void
  */
 const voidVar: void = undefined;
-const voidVar2: void = null;
+// const voidVar2: void = null;
 
-function print(m): void {
+function print(m: string): void {
     console.log(m);
 }
 
@@ -69,7 +69,7 @@ function func1(): void {
 }
 
 function func2(): void {
-    return null;
+    // return null;
 }
 
 function func3(): void {

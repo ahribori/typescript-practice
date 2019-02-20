@@ -129,10 +129,10 @@ myArray = {
 // };
 
 class Animal2 {
-    name: string;
+    name: string = 'name';
 }
 class Dog extends Animal2 {
-    breed: string;
+    breed: string = 'breed';
 }
 
 // 오류: numeric과 string으로 인덱싱하면 완전히 다른 타입의 Animal을 얻을 수 있습니다!
@@ -161,11 +161,11 @@ let myArr: ReadonlyStringArray = ["Alice", "Bob"];
  */
 interface ClockInterfaceExample {
     currentTime: Date;
-    setTime(d: Date);
+    setTime(d: Date): any;
 }
 
 class Clock implements ClockInterfaceExample {
-    currentTime: Date;
+    currentTime: Date = new Date();
     setTime(d: Date) {
     }
     constructor(h: number, m: number) {
@@ -178,7 +178,7 @@ interface ClockConstructor {
     new (hour: number, minute: number): ClockInterface;
 }
 interface ClockInterface {
-    tick();
+    tick(): any;
 }
 
 //생성자는 정적인 측면에서 직접 작업해야 합니다.
