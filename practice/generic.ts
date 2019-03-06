@@ -69,3 +69,28 @@ class MyClassWithMultipleGeneric<T, K> {
 
 new MyClassWithMultipleGeneric<string, number>('야', 32);
 
+/**
+ * Generic으로 Type lookup system을 만들 수 있다.
+ */
+
+interface IPerson {
+    name: string;
+    age: number;
+}
+
+function getProperty<T, K extends keyof T> (obj: T, key: K): T[K] {
+    return obj[key];
+}
+
+function setProperty<T, K extends keyof T> (obj: T, key: K, value: T[K]) : void {
+    obj[key] = value;
+}
+
+const abc: IPerson = {
+    name: '정현승',
+    age: 24
+};
+
+const age = getProperty(abc, 'age');
+
+setProperty(abc, 'age', 24);
