@@ -1,7 +1,13 @@
 {
 	"compilerOptions": {
-		"target": "es6",
+		"module": "es2015",
+		"target": "es5",
 		"strict": true,
+		"outDir": "./dist",
+		"sourceMap": true,
 		"experimentalDecorators": true
-	}
+	},
+	"include": [
+		"./**/*"
+	]
 }
