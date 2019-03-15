@@ -1,1 +1,1 @@
-import './code_snippets/parse-time';
+import './code_snippets/salary';
