@@ -6,6 +6,7 @@ interface IReservation {
 interface IParsedTime {
   hour: number;
   minutes: number;
+  _v: number;
 }
 
 const reservations: Array<IReservation> = [
@@ -32,6 +33,7 @@ const parseTime = (timeString: string): IParsedTime => {
   return {
     hour: parseInt(hour),
     minutes: parseInt(minutes),
+    _v: parseInt(hour) * 60 + parseInt(minutes),
   };
 };
 
@@ -46,3 +48,5 @@ const parsedEndTimes: Array<IParsedTime> = reservations.map(
     return parseTime(reservation.endTime);
   },
 );
+
+console.log(parsedStartTimes);
