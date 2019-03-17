@@ -29,12 +29,11 @@ class MySalary implements ISalaryInterface {
     } else if (this.salary < 10000000) {
       return this.salary - (this.salary % 20000) + 10000;
     } else {
-      // TODO
+      return this.salary;
     }
-    return 0;
   }
 }
 
-const salary = new MySalary(SalaryType.MONTH, 2503000);
+const salary = new MySalary(SalaryType.ANNUAL, 83000000);
 
 console.log(salary);
