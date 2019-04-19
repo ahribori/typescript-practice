@@ -1,1 +1,1 @@
-import './code_snippets/salary';
+import './code_snippets/generator-practice';
