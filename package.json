@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/ahribori/typescript-practice#readme",
   "dependencies": {
-    "nodemon": "^1.18.10",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333"
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
